@@ -35,7 +35,7 @@ __Ham Veri Toplama:__ Pardus donanım ve işletim sistemi seviyesinde telemetri 
 
 **Dinamik Önceliklendirme:** Bu aşamada veriler iki gruba ayrılır
 
-  &emsp; 1. Kritik Veri (Bypass): Anormal CPU ve RAM kullanımı, anormal disk yazma hızı, USB ihlalleri, yetkisiz girişler, yetkisiz socket kullanımı gibi kritik hatalar anında iletilir.
+  &emsp; 1. Kritik Veri (Bypass): Anormal CPU ve RAM kullanımı, anormal disk yazma hızı, USB ihlalleri, yetkisiz girişler, yetkisiz port kullanımı gibi kritik hatalar anında iletilir.
 
   &emsp; 2. Rutin Veri (Batch): Periyodik loglar zlib ile sıkıştırılarak paketler halinde gönderilir.
 
