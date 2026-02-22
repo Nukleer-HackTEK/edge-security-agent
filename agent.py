@@ -32,7 +32,7 @@ class AsyncEdgeAgent:
         self.KRITIK_CPU = self.config.get("thresholds", {}).get("cpu", 85.0)
         self.KRITIK_RAM = self.config.get("thresholds", {}).get("ram", 80.0)
         self.MESAI_BASLAMA = self.config.get("working_hours", {}).get("start", 8)
-        self.MESAI_BITIS = self.config.get("working_hours", {}).get("end", 22)
+        self.MESAI_BITIS = self.config.get("working_hours", {}).get("end", 18)
         self.RISK_A = self.config.get("risk_limits", {}).get("A", 90)
         self.RISK_B = self.config.get("risk_limits", {}).get("B", 70)
         self.YETKILI_USB = self.config.get("whitelist", {}).get("usb", ["058f:6387"])
