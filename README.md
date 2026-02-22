@@ -60,9 +60,21 @@ __Ham Veri Toplama:__ Pardus donanım ve işletim sistemi seviyesinde telemetri 
 | **Hatalı Alarm Oranı** | Yüksek (Filtresiz) | Çok Düşük (Akıllı Filtre) | **Yüksek Doğruluk** |
 | **İletişim Kanalı** | Tek Hat (Sürekli) | Hibrit (Bypass + Batch) | **Dinamik Öncelik** |
 
-# Kurulum ve Kullanımı
-1. Bağımlılıkları Kurun
-2. Ajanı Çalıştırın
+# Kurulum ve Çalıştırma
+
+`edge-security-agent`'ı yerel ortamınızda veya sunucunuzda çalıştırmak için aşağıdaki adımları takip edin.
+
+## 1. Ön Koşullar
+Sisteminizde aşağıdaki araçların yüklü olduğundan emin olun:
+* **Python 3.8+**
+* **pip**
+* **Git**
+
+## 2. Depoyu Klonlayın
+Öncelikle projeyi bilgisayarınıza indirin ve proje dizinine gidin:
+  `bash
+  git clone [https://github.com/Nukleer-HackTEK/edge-security-agent.git](https://github.com/Nukleer-HackTEK/edge-security-agent.git)
+  cd edge-security-agent`
    
 # Güvenlik ve Gizlilik
 
