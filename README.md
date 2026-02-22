@@ -46,8 +46,6 @@ __Ham Veri Toplama:__ Pardus donanım ve işletim sistemi seviyesinde telemetri 
 
 **Asenkron Motor:** Python asyncio altyapısı sayesinde, veri gönderimi yapılırken sistem takibi kesintisiz devam eder (Non-blocking I/O).
 
-**Adaptif Filtreleme:** Ağ trafiği yoğunlaştığında ajan, gürültü eşiğini otomatik olarak yükselterek bant genişliğini korur.
-
 **Veri Optimizasyonu:** JSON paketleme ve zlib sıkıştırma ile ham veriye oranla %80'e varan bant genişliği tasarrufu sağlanır.
 
 **Offline Resilience**: Ağ bağlantısı koptuğunda veriler yerel SQLite veritabanında tamponlanır (Buffering).
