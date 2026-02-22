@@ -71,7 +71,7 @@ Nükleer HackTEK, sadece ağı izlemekle kalmaz, topladığı verinin ve kendi s
 * **Kriptografik Doğrulama:** USB erişim denetimleri sadece seri no (ID_SERIAL) ile değil, **AES-256 (Fernet)** şifreli anahtarlar ile donanımsal olarak yapılır. Hiçbir şifre veya sunucu adresi koda gömülmez (No Hardcoding), izole `.env` dosyalarıyla yönetilir.
 * **Yerel Veri İzolasyonu:** Ağ kesintilerinde verilerin tamponlandığı yerel SQLite veritabanı (`edge_cache.db`), Linux yetkilendirme standartlarıyla katılaştırılarak dış okumalara kapatılmıştır. Sadece yetkili işlemler erişebilir.
 * **Şifreli İletişim (Data in Transit):** Hibrit telemetri ajanı ile LiderAhenk sunucusu arasındaki "Bypass" ve "Batch" kanallarının tamamı Ortadaki Adam (MitM) saldırılarını önlemek için şifreli bağlantılar üzerinden gerçekleşir.
-* **Veri Maskeleme ve Anonimleştirme:** Uçbirimdeki güvenlik logları merkeze iletilmeden önce uçta (edge) filtrelenir. Logların içine yanlışlıkla sızabilecek personelin kişisel verileri maskelenerek kurum içi mahremiyet korunur.
+* **Veri Maskeleme ve Anonimleştirme:** Uçbirimdeki güvenlik logları lidere iletilmeden önce uçta (edge) filtrelenir. Filtrelemede sızabilecek personelin kişisel verileri maskelenerek kurum içi mahremiyet korunur. (geliştirilmektedir.)
 
 # Takım & Lisans
 Bu proje Nüküleer HackTEK Takımı tarafından geliştirilmiştir.
