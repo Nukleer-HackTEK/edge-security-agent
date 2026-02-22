@@ -13,7 +13,7 @@
 + Kritik güvenlik ihlallerinin gürültü arasında kaybolması riskini yaratır.
 
 # Çözüm
-  &emsp;Geliştirdiğimiz hibrit mimari ile veri, uçbirimde analiz edilir. Rutin veriler filtrelenir ve paketlenirken, kritik güvenlik ihlalleri "Bypass" kanalıyla anında merkeze raporlanır.
+  &emsp;Geliştirdiğimiz hibrit mimari ile veri, uçbirimde analiz edilir. Rutin veriler filtrelenir ve paketlenirken, kritik güvenlik ihlalleri "bypass" kanalıyla anında merkeze raporlanır.
 
 ## Sistem Mimarisi
 <p align="center">
