@@ -41,6 +41,15 @@ __Ham Veri Toplama:__ Pardus donanım ve işletim sistemi seviyesinde telemetri 
 
 **Ağ Farkındalığı:** Ajan, ağ yoğunluğunu analiz ederek gönderim zamanlamasını otonom olarak ayarlar (geliştirilmektedir).
 
+<p align="center">
+
+  ![WhatsApp Image 2026-02-22 at 09 24 21](https://github.com/user-attachments/assets/de24913d-8dec-4acd-b110-28704c3a21bd)
+
+</p>
+
+<p align="center">
+Görsel-1: Sunucu arayüzü.
+</p>
 
 ## Öne Çıkan Teknik Özellikler
 
@@ -49,6 +58,12 @@ __Ham Veri Toplama:__ Pardus donanım ve işletim sistemi seviyesinde telemetri 
 **Veri Optimizasyonu:** Gürültü engelleme, JSON paketleme ve zlib sıkıştırma ile ham veriye oranla %90'a varan bant genişliği tasarrufu sağlanır.
 
 **Offline Resilience**: Ağ bağlantısı koptuğunda veriler yerel SQLite veritabanında depolanır (buffering). Ağ bağlantısı sağlandığında ağ darboğazına sebep olmamak için, veri maksimum 50'li paketler halinde sunucuya iletilir.
+
+**Disk Odaklı Çalışma Prensibi**: Sunucu bağlatısının kesildiği durumlarda veri kaybını önlemek için uçbirim tarafından veriler RAM yerine diske kaydedilir. Bu sayede uçbirimin donanımsal yükü azalırken veri kaybı olmaz.
+
+**Çoklu Cihaz Uyumu**: Verileri uçbirim ID'leri ile birlikte depolar ve analiz eder. Bu sayede sunucu monitoründe ağdaki istenilen ajan kolaylıkla yönetilebilir.,
+
+
 
 ## Performans Kıyaslaması
 
@@ -65,7 +80,9 @@ __Ham Veri Toplama:__ Pardus donanım ve işletim sistemi seviyesinde telemetri 
 
 Nükleer HackTEK, sadece ağı izlemekle kalmaz, topladığı verinin ve kendi sisteminin güvenliğini de **Sıfır Güven (Zero-Trust)** ve **Mahremiyet Odaklı Tasarım (Privacy by Design)** prensipleriyle sağlar:
 
-* **Kriptografik Doğrulama:** USB erişim denetimleri sadece seri no (ID_SERIAL) ile değil, şifreli anahtarlar ile donanımsal olarak yapılır. Hiçbir şifre veya sunucu adresi koda gömülmez. (geliştirilmektedir)
+* **Kriptografik Doğrulama:** USB erişim denetimleri sadece seri no (ID_SERIAL) ile değil, şifreli anahtarlar ile donanımsal olarak yapılır. Hiçbir şifre veya sunucu adresi koda gömülmez. (Mevcut programda seri no ile çalışan bu sistem geliştirilmektedir)
+* **Yetkisiz Port Koruması**: Tanımlanan güvenli portlar dışında uçbirim sisteminde bilinmeyen port açılması durumunda lideri uyararak olası tehditleri bildirir.
+* **Anormal Log Takibi**: Özelleştirilebilen mesai saatleri dışında uçbirim tarafından sisteme giriş denemelerinin fark edilip raporlanması.
 * **Veri Maskeleme ve Anonimleştirme:** Uçbirimdeki güvenlik logları merkeze iletilmeden önce uçta (edge) filtrelenir. Logların içine yanlışlıkla sızabilecek personelin kişisel verileri maskelenerek kurum içi mahremiyet korunur.
 
 # Takım & Lisans
