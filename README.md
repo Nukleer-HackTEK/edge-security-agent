@@ -73,8 +73,16 @@ Görsel-1: Sunucu arayüzü.
 | **İletişim Kanalı** | Tek Hat (Sürekli) | Hibrit (Bypass + Batch) | **Dinamik Öncelik** |
 
 # Kurulum ve Kullanımı !!!!!!!!!!!
-1. Bağımlılıkları Kurun
-2. Ajanı Çalıştırın
+edge-security-agent'ı yerel ortamınızda veya sunucunuzda çalıştırmak için aşağıdaki adımları takip edin.
+
+1. Ön Koşullar
+Sisteminizde aşağıdaki araçların yüklü olduğundan emin olun:
+
+Python 3.8+
+
+pip (Python paket yöneticisi)
+
+Git
    
 # Güvenlik ve Gizlilik !!!!!!!!!!!!
 
