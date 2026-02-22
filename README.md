@@ -55,7 +55,7 @@ Görsel-1: Sunucu arayüzü.
 
 **Asenkron Motor:** Python asyncio altyapısı sayesinde, veri gönderimi yapılırken sistem takibi kesintisiz devam eder.
 
-**Veri Optimizasyonu:** Gürültü engelleme, JSON paketleme ve zlib sıkıştırma ile ham veriye oranla %90'a varan bant genişliği tasarrufu sağlanır.
+**Veri Optimizasyonu:** Gürültü engelleme(geliştirilmektedir.), JSON paketleme ve zlib sıkıştırma ile ham veriye oranla %90'a varan bant genişliği tasarrufu sağlanır.
 
 **Offline Resilience**: Ağ bağlantısı koptuğunda veriler yerel SQLite veritabanında depolanır (buffering). Ağ bağlantısı sağlandığında ağ darboğazına sebep olmamak için, veri maksimum 50'li paketler halinde sunucuya iletilir.
 
@@ -73,38 +73,22 @@ Görsel-1: Sunucu arayüzü.
 | **İletişim Kanalı** | Tek Hat (Sürekli) | Hibrit (Bypass + Batch) | **Dinamik Öncelik** |
 
 
-## Kurulum ve Çalıştırma
+# Kurulum ve Çalıştırma
 
 `edge-security-agent`'ı yerel ortamınızda veya sunucunuzda çalıştırmak için aşağıdaki adımları takip edin.
 
-### 1. Ön Koşullar
+## 1. Ön Koşullar
 Sisteminizde aşağıdaki araçların yüklü olduğundan emin olun:
 * **Python 3.8+**
 * **pip**
 * **Git**
 
-### 2. Depoyu Klonlayın
+## 2. Depoyu Klonlayın
 Öncelikle projeyi bilgisayarınıza indirin ve proje dizinine gidin:
-```bash
-git clone [https://github.com/Nukleer-HackTEK/edge-security-agent.git](https://github.com/Nukleer-HackTEK/edge-security-agent.git)
-cd edge-security-agent
+  `bash
+  git clone [https://github.com/Nukleer-HackTEK/edge-security-agent.git](https://github.com/Nukleer-HackTEK/edge-security-agent.git)
+  cd edge-security-agent`
 
-### 3. Sanal Ortam Oluşturun (Önerilir)
-Proje bağımlılıklarını izole etmek için bir sanal ortam kullanmanız tavsiye edilir:
-
-**Windows için:**
-```bash
-python -m venv venv
-venv\Scripts\activate
-
-python3 -m venv venv
-source venv/bin/activate
-
-cp .env.example .env
-# Ardından .env dosyasını bir metin editörü ile açıp gerekli ayarları girin.
-
-python main.py
-   
 # Güvenlik ve Gizlilik 
 
 Nükleer HackTEK, sadece ağı izlemekle kalmaz, topladığı verinin ve kendi sisteminin güvenliğini de **Sıfır Güven (Zero-Trust)** ve **Mahremiyet Odaklı Tasarım (Privacy by Design)** prensipleriyle sağlar:
