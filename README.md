@@ -83,7 +83,7 @@ Nükleer HackTEK, sadece ağı izlemekle kalmaz, topladığı verinin ve kendi s
 * **Kriptografik Doğrulama:** USB erişim denetimleri sadece seri no (ID_SERIAL) ile değil, şifreli anahtarlar ile donanımsal olarak yapılır. Hiçbir şifre veya sunucu adresi koda gömülmez. (Mevcut programda seri no ile çalışan bu sistem geliştirilmektedir)
 * **Yetkisiz Port Koruması**: Tanımlanan güvenli portlar dışında uçbirim sisteminde bilinmeyen port açılması durumunda lideri uyararak olası tehditleri bildirir.
 * **Anormal Log Takibi**: Özelleştirilebilen mesai saatleri dışında uçbirim tarafından sisteme giriş denemelerinin fark edilip raporlanması.
-* **Veri Maskeleme ve Anonimleştirme:** Uçbirimdeki güvenlik logları lidere iletilmeden önce uçta (edge) filtrelenir. Filtrelemede logların içine sızabilecek personelin kişisel verileri maskelenerek kurum içi mahremiyet korunur.
+* **Veri Maskeleme ve Anonimleştirme:** Uçbirimdeki güvenlik logları lidere iletilmeden önce uçta (edge) filtrelenir. Filtrelemede logların içine sızabilecek personelin kişisel verileri maskelenerek kurum içi mahremiyet korunur. (geliştirilmektedir.)
 
 # Takım & Lisans
 Bu proje Nüküleer HackTEK Takımı tarafından geliştirilmiştir
