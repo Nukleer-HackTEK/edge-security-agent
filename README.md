@@ -72,19 +72,40 @@ Görsel-1: Sunucu arayüzü.
 | **Hatalı Alarm Oranı** | Yüksek (Filtresiz) | Çok Düşük (Akıllı Filtre) | **Yüksek Doğruluk** |
 | **İletişim Kanalı** | Tek Hat (Sürekli) | Hibrit (Bypass + Batch) | **Dinamik Öncelik** |
 
-# Kurulum ve Kullanımı !!!!!!!!!!!
-edge-security-agent'ı yerel ortamınızda veya sunucunuzda çalıştırmak için aşağıdaki adımları takip edin.
 
-1. Ön Koşullar
+## Kurulum ve Çalıştırma
+
+`edge-security-agent`'ı yerel ortamınızda veya sunucunuzda çalıştırmak için aşağıdaki adımları takip edin.
+
+### 1. Ön Koşullar
 Sisteminizde aşağıdaki araçların yüklü olduğundan emin olun:
+* **Python 3.8+**
+* **pip**
+* **Git**
 
-Python 3.8+
+### 2. Depoyu Klonlayın
+Öncelikle projeyi bilgisayarınıza indirin ve proje dizinine gidin:
+```bash
+git clone [https://github.com/Nukleer-HackTEK/edge-security-agent.git](https://github.com/Nukleer-HackTEK/edge-security-agent.git)
+cd edge-security-agent
 
-pip (Python paket yöneticisi)
+### 3. Sanal Ortam Oluşturun (Önerilir)
+Proje bağımlılıklarını izole etmek için bir sanal ortam kullanmanız tavsiye edilir:
 
-Git
+**Windows için:**
+```bash
+python -m venv venv
+venv\Scripts\activate
+
+python3 -m venv venv
+source venv/bin/activate
+
+cp .env.example .env
+# Ardından .env dosyasını bir metin editörü ile açıp gerekli ayarları girin.
+
+python main.py
    
-# Güvenlik ve Gizlilik !!!!!!!!!!!!
+# Güvenlik ve Gizlilik 
 
 Nükleer HackTEK, sadece ağı izlemekle kalmaz, topladığı verinin ve kendi sisteminin güvenliğini de **Sıfır Güven (Zero-Trust)** ve **Mahremiyet Odaklı Tasarım (Privacy by Design)** prensipleriyle sağlar:
 
