@@ -39,40 +39,35 @@ __Ham Veri Toplama:__ Pardus donanım ve işletim sistemi seviyesinde telemetri 
 
   &emsp; 2. Rutin Veri (Batch): Periyodik loglar zlib ile sıkıştırılarak paketler halinde gönderilir.
 
-**Ağ Farkındalığı:** Ajan, ağ yoğunluğunu analiz ederek gönderim zamanlamasını otonom olarak ayarlar.
+**Ağ Farkındalığı:** Ajan, ağ yoğunluğunu analiz ederek gönderim zamanlamasını otonom olarak ayarlar (geliştirilmektedir).
 
 
 ## Öne Çıkan Teknik Özellikler
 
-**Asenkron Motor:** Python asyncio altyapısı sayesinde, veri gönderimi yapılırken sistem takibi kesintisiz devam eder (Non-blocking I/O).
+**Asenkron Motor:** Python asyncio altyapısı sayesinde, veri gönderimi yapılırken sistem takibi kesintisiz devam eder.
 
-**Veri Optimizasyonu:** JSON paketleme ve zlib sıkıştırma ile ham veriye oranla %80'e varan bant genişliği tasarrufu sağlanır.
+**Veri Optimizasyonu:** Gürültü engelleme, JSON paketleme ve zlib sıkıştırma ile ham veriye oranla %90'a varan bant genişliği tasarrufu sağlanır.
 
-**Offline Resilience**: Ağ bağlantısı koptuğunda veriler yerel SQLite veritabanında tamponlanır (Buffering).
-
+**Offline Resilience**: Ağ bağlantısı koptuğunda veriler yerel SQLite veritabanında depolanır (buffering). Ağ bağlantısı sağlandığında ağ darboğazına sebep olmamak için, veri maksimum 50'li paketler halinde sunucuya iletilir.
 
 ## Performans Kıyaslaması
 
 | Metrik | Geleneksel Mimari | Nükleer HackTEK | Kazanım |
 | :--- | :--- | :--- | :--- |
-| **Ağ Trafiği** | 100 MB / Saat | 15 MB / Saat | **%85 Tasarruf** |
-| **Sunucu G/Ç Yükü** | %45 | %12 | **%73 Verimlilik** |
 | **Hatalı Alarm Oranı** | Yüksek (Filtresiz) | Çok Düşük (Akıllı Filtre) | **Yüksek Doğruluk** |
 | **İletişim Kanalı** | Tek Hat (Sürekli) | Hibrit (Bypass + Batch) | **Dinamik Öncelik** |
 
-# Kurulum ve Kullanımı
+# Kurulum ve Kullanımı !!!!!!!!!!!
 1. Bağımlılıkları Kurun
 2. Ajanı Çalıştırın
    
-# Güvenlik ve Gizlilik
+# Güvenlik ve Gizlilik !!!!!!!!!!!!
 
 Nükleer HackTEK, sadece ağı izlemekle kalmaz, topladığı verinin ve kendi sisteminin güvenliğini de **Sıfır Güven (Zero-Trust)** ve **Mahremiyet Odaklı Tasarım (Privacy by Design)** prensipleriyle sağlar:
 
-* **Kriptografik Doğrulama:** USB erişim denetimleri sadece seri no (ID_SERIAL) ile değil, **AES-256 (Fernet)** şifreli anahtarlar ile donanımsal olarak yapılır. Hiçbir şifre veya sunucu adresi koda gömülmez (No Hardcoding), izole `.env` dosyalarıyla yönetilir.
-* **Yerel Veri İzolasyonu:** Ağ kesintilerinde verilerin tamponlandığı yerel SQLite veritabanı (`edge_cache.db`), Linux yetkilendirme standartlarıyla katılaştırılarak dış okumalara kapatılmıştır. Sadece yetkili işlemler erişebilir.
-* **Şifreli İletişim (Data in Transit):** Hibrit telemetri ajanı ile LiderAhenk sunucusu arasındaki "Bypass" ve "Batch" kanallarının tamamı Ortadaki Adam (MitM) saldırılarını önlemek için şifreli bağlantılar üzerinden gerçekleşir.
+* **Kriptografik Doğrulama:** USB erişim denetimleri sadece seri no (ID_SERIAL) ile değil, şifreli anahtarlar ile donanımsal olarak yapılır. Hiçbir şifre veya sunucu adresi koda gömülmez. (geliştirilmektedir)
 * **Veri Maskeleme ve Anonimleştirme:** Uçbirimdeki güvenlik logları merkeze iletilmeden önce uçta (edge) filtrelenir. Logların içine yanlışlıkla sızabilecek personelin kişisel verileri maskelenerek kurum içi mahremiyet korunur.
 
 # Takım & Lisans
-Bu proje Nüküleer HackTEK Takımı tarafından geliştirilmiştir.
+Bu proje Nüküleer HackTEK Takımı tarafından geliştirilmiştir
 MIT
