@@ -72,9 +72,12 @@ Sisteminizde aşağıdaki araçların yüklü olduğundan emin olun:
 
 ## 2. Depoyu Klonlayın
 Öncelikle projeyi bilgisayarınıza indirin ve proje dizinine gidin:
-  `bash
+  ``bash
   git clone [https://github.com/Nukleer-HackTEK/edge-security-agent.git](https://github.com/Nukleer-HackTEK/edge-security-agent.git)
-  cd edge-security-agent`
+  cd edge-security-agent``
+
+## 3. Çalıştırma
+Dosyalar yüklendikten sonra masaüstüne gelen `HackTEK Ajanı Başlat` uygulamasını açın, girdikten sonra sudo şifrenizi girin.
    
 # Güvenlik ve Gizlilik
 
