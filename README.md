@@ -85,9 +85,12 @@ Sisteminizde aşağıdaki araçların yüklü olduğundan emin olun:
 
 ## 2. Depoyu Klonlayın
 Öncelikle projeyi bilgisayarınıza indirin ve proje dizinine gidin:
-  `bash
+  ``bash
   git clone [https://github.com/Nukleer-HackTEK/edge-security-agent.git](https://github.com/Nukleer-HackTEK/edge-security-agent.git)
-  cd edge-security-agent`
+  cd edge-security-agent``
+
+## 3. Çalıştırma
+Bütün dosyalar yüklendikten sonra terminali açıp baslatici.py dosyasını çalıştırın.
 
 # Güvenlik ve Gizlilik 
 
